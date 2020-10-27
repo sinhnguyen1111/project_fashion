@@ -48,34 +48,18 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @foreach ($users as $value )
+                                
+                           
                         <tr>
-                            <td>183</td>
-                            <td>hoannc@gmail.com</td>
-                            <td>John Doe</td>
-                            <td>11-7-2014</td>
+                            <td>{{ $value->id }}</td>
+                            <td>{{ $value->email }}</td>
+                            <td>{{ $value->name }}</td>
+                            <td>{{ $value->created_at }}</td>
                             <td><span class="tag tag-success">Approved</span></td>
                         </tr>
-                        <tr>
-                            <td>219</td>
-                            <td>hoannc@gmail.com</td>
-                            <td>Alexander Pierce</td>
-                            <td>11-7-2014</td>
-                            <td><span class="tag tag-warning">Pending</span></td>
-                        </tr>
-                        <tr>
-                            <td>657</td>
-                            <td>hoannc@gmail.com</td>
-                            <td>Bob Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="tag tag-primary">Approved</span></td>
-                        </tr>
-                        <tr>
-                            <td>175</td>
-                            <td>hoannc@gmail.com</td>
-                            <td>Mike Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="tag tag-danger">Denied</span></td>
-                        </tr>
+                        @endforeach
+                        {{ $users->links() }}
                         </tbody>
                     </table>
                 </div>

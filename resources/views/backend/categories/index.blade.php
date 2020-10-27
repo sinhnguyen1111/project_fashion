@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Danh sách sản phẩm</h1>
+            <h1 class="m-0 text-dark">Danh mục sản phẩm</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -23,7 +23,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Sản phẩm mới nhập</h3>
+                    <h3 class="card-title">Danh mục sản phẩm</h3>
 
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
@@ -39,26 +39,28 @@
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover">
                         <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Giá gốc</th>
-                            <th>Giá sale</th>
-                            <th>Danh mục</th>
-                        </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên danh mục</th>
+                                <th>Parent_id</th>
+                                <th>Status</th>
+                                <th>Mô tả</th>
+                            </tr>
+                           
                         </thead>
                         <tbody>
-                            @foreach ($products as $item)
+                            @foreach ( $categories as $value )
                             <tr>
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->origin_price }}</td>
-                                <td>{{ $item->sale_price }}</td>
-                                <td>{{ $item->category_id }}</td>
+                                <td>{{ $value->id }}</td>
+                                <td>{{ $value->name }}</td>
+                                {{-- <td>11-7-2014</td> --}}
+                                <td><span class="tag tag-success">Approved</span></td>
+                                {{-- <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td> --}}
                             </tr>
                             @endforeach
-                            {{ $products->links() }}
-                        
+                            {{ $categories->links() }}
+                       
+                       
                         </tbody>
                     </table>
                 </div>
