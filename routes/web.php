@@ -26,3 +26,9 @@ Route::get('admin/user/index',[App\Http\Controllers\Frontend\UserController::cla
 
 //Category
 Route::get('admin/category/index',[App\Http\Controllers\Backend\CategoryController::class,'index'])->name('category.index');
+
+
+Route::get('/',[App\Http\Controllers\Frontend\HomeController::class,'index'])->name('home.index');
+Route::get('/about_us',[App\Http\Controllers\Frontend\AboutController::class,'index'])->name('about.index');
+Route::get('/product',[App\Http\Controllers\Frontend\ProductController::class,'index'])->name('product.index');
+Route::get('/contact',[App\Http\Controllers\Frontend\ContactController::class,'index'])->name('contact.index');
